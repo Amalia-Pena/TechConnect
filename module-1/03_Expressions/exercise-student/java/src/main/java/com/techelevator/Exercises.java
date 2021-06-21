@@ -39,7 +39,10 @@ public class Exercises {
 	 sumDouble(2, 2) → 8
 	 */
 	public int sumDouble(int a, int b) {
-		return 0;
+		if (a == b)
+			return 2 * (a + b);
+		else
+			return a +b;
 	}
 
 	/*
@@ -51,8 +54,13 @@ public class Exercises {
 	 diff21(22) → 2
 	 diff21(-10) → 31
 	 */
+
 	public int diff21(int n) {
-		return 0;
+		int sum = Math.abs(21-n);
+		if (n>21)
+			return 2*sum;
+		else
+			return sum;
 	}
 
 	/*
@@ -64,7 +72,8 @@ public class Exercises {
 	 parrotTrouble(false, 6) → false
 	 */
 	public boolean parrotTrouble(boolean talking, int hour) {
-		return false;
+		return (talking && (hour <7 || hour > 20));
+
 	}
 
 	/*
@@ -74,8 +83,9 @@ public class Exercises {
 	 makes10(1, 9) → true
 	 */
 	public boolean makes10(int a, int b) {
-		return false;
+		return (a==10 || b ==10 || a+b ==10);
 	}
+
 
 	/*
 	 7. Given 2 int values, return true if one is negative and one is positive. Except if the parameter
@@ -85,6 +95,7 @@ public class Exercises {
 	 posNeg(-4, -5, true) → true
 	 */
 	public boolean posNeg(int a, int b, boolean negative) {
+
 		return false;
 	}
 
@@ -96,7 +107,12 @@ public class Exercises {
 	 or35(8) → false
 	 */
 	public boolean or35(int n) {
-		return false;
+		if ((n % 3 == 0) || (n % 5 == 0)) {
+			return true;
+		} else {
+			return false;
+
+		}
 	}
 
 	/*
@@ -106,6 +122,9 @@ public class Exercises {
 	 icyHot(2, 120) → false
 	 */
 	public boolean icyHot(int temp1, int temp2) {
+		if ((temp1 < 0 && temp2 > 100) || (temp1 > 100 && temp2 < 0)) {
+			return true;
+		} else {
 		return false;
 	}
 
@@ -115,9 +134,12 @@ public class Exercises {
 	 in1020(21, 12) → true
 	 in1020(8, 99) → false
 	 */
-	public boolean in1020(int a, int b) {
-		return false;
-	}
+
+	public boolean in1020 (int a, int b) {
+		return ((a >= 10 && a <=20) || (b >= 10 && b<= 20));
+		}
+
+
 
 	/*
 	 11. We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 3 int values,
@@ -159,8 +181,9 @@ public class Exercises {
 	 in3050(40, 50) → true
 	 */
 	public boolean in3050(int a, int b) {
-		return false;
-	}
+		return ( ((a >=30 & a <=40) & (( b >=30 & b <=40))) | ((c >=40 & a <=50) & ((b >=40 & b <=50))));
+		}
+
 
 	/*
 	 15. Given 2 int values, return the larger value that is in the range 10..20 inclusive,
@@ -405,6 +428,10 @@ public class Exercises {
 	 loneSum(3, 3, 3) → 0
 	 */
 	public int loneSum(int a, int b, int c) {
+		if(a == b)
+		{
+		}
+		}
 		return 0;
 	}
 
@@ -418,8 +445,15 @@ public class Exercises {
 	 luckySum(13, 1, 3) → 3
 	 luckySum(13, 13, 3) → 0
 	 */
-	public int luckySum(int a, int b, int c) {
-		return 0;
-	}
 
-}
+	public int luckySum(int a, int b, int c) {
+		if(a == 13)
+			return 0;
+		if (b == 13)
+			return a;
+		if c == 13)
+			return (a + b);
+		return (a + b + c);
+		}
+
+
