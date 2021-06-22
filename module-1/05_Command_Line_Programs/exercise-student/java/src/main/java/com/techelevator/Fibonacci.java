@@ -12,20 +12,28 @@ public class Fibonacci {
 		System.out.println("Welcome to the Fibonacci sequence calculator!");
 
 
-		int sumOfAll = 0;
-		int numberOne = 0;
-		int numberTwo = 0;
+		System.out.println("Please enter a number:");
+		int count, numberOne = 0, numberTwo = 1;
 
-		String upperBoundSequence = "0, 1";
+		count = input.nextInt();
+		input.close();
 
-		System.out.println("Please enter a number (Fibonacci):");
-		int numberUpperBound = input.nextInt();
+		System.out.println("Fibonacci Series of " + count + " numbers:");
 
-		System.out.print(upperBoundSequence);
-		while (sumOfAll < numberUpperBound) {
-			sumOfAll = numberOne + numberTwo;
-
+		int i = 1;
+		while (i <= count) {
+			System.out.print(numberOne + " ");
+			int sum = numberOne + numberTwo;
+			numberOne = numberTwo;
+			numberTwo = sum;
+			i++;
 		}
 
 	}
 }
+
+
+
+
+
+
