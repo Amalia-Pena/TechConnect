@@ -153,8 +153,8 @@ public class Exercises {
 	 right2("Hi") → "Hi"
 	 */
 	public String right2(String str) {
-		String twoLast = new String(" ");
-		twoLast = str.substring(0, str.length() -2);
+		String twoLast = new String ("");
+		twoLast = str.substring(str.length() -2);
 
 		return (twoLast + str.substring(0, str.length() - 2));
 	}
