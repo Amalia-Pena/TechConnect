@@ -1,5 +1,7 @@
 package com.techelevator;
 
+import javax.swing.*;
+
 public class Exercises {
 
 	/*
@@ -10,8 +12,13 @@ public class Exercises {
 	 sleepIn(false, true) → true
 	 */
 	public boolean sleepIn(boolean weekday, boolean vacation) {
-		return false;
+		if (weekday == true && vacation == false) {
+			return false;
+		} else {
+			return true;
+		}
 	}
+
 
 	/*
 	 2. We have two monkeys, a and b, and the parameters aSmile and bSmile indicate if each is smiling.
@@ -22,8 +29,15 @@ public class Exercises {
 	 monkeyTrouble(true, false) → false
 	 */
 	public boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
-		return false;
+		if (aSmile == true && bSmile == true) {
+			return true;
+		} else if (aSmile == false && bSmile == false) {
+			return true;
+		} else {
+			return false;
+		}
 	}
+
 
 	/*
 	 3. Given two int values, return their sum. Unless the two values are the same, then return double their sum.
@@ -32,7 +46,11 @@ public class Exercises {
 	 sumDouble(2, 2) → 8
 	 */
 	public int sumDouble(int a, int b) {
-		return 0;
+		if (a == b) {
+			return 2 * (a + b);
+		} else {
+			return a + b;
+		}
 	}
 
 	/*
@@ -45,7 +63,12 @@ public class Exercises {
 	 diff21(-10) → 31
 	 */
 	public int diff21(int n) {
-		return 0;
+		int sum = Math.abs(21 - n);
+		if (n > 21) {
+			return 2 * sum;
+		} else {
+			return sum;
+		}
 	}
 
 	/*
@@ -57,8 +80,14 @@ public class Exercises {
 	 parrotTrouble(false, 6) → false
 	 */
 	public boolean parrotTrouble(boolean talking, int hour) {
-		return false;
+		if (talking == true && (hour < 7 == true || hour > 20 == true)) {
+			return true;
+		} else {
+			return false;
+		}
+		//return (talking && (hour <7 || hour > 20));
 	}
+
 
 	/*
 	 6. Given 2 ints, a and b, return true if one if them is 10 or if their sum is 10.
@@ -67,7 +96,13 @@ public class Exercises {
 	 makes10(1, 9) → true
 	 */
 	public boolean makes10(int a, int b) {
-		return false;
+		if (a + b == 10) {
+			return true;
+		} else if (a == 10 || b == 10) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/*
@@ -78,6 +113,15 @@ public class Exercises {
 	 posNeg(-4, -5, true) → true
 	 */
 	public boolean posNeg(int a, int b, boolean negative) {
+		if (negative == true) {
+			if (a < 0 && b < 0) {
+				return true;
+			}
+		} else {
+			if ((a < 0 && b > 0) || (a > 0 && b < 0)) {
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -89,8 +133,13 @@ public class Exercises {
 	 or35(8) → false
 	 */
 	public boolean or35(int n) {
-		return false;
+		if ((n % 3 == 0) || (n % 5 == 0)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
+
 
 	/*
 	 9. Given two temperatures, return true if one is less than 0 and the other is greater than 100.
@@ -99,7 +148,11 @@ public class Exercises {
 	 icyHot(2, 120) → false
 	 */
 	public boolean icyHot(int temp1, int temp2) {
-		return false;
+		if ((temp1 < 0 && temp2 > 100) || (temp1 > 100 && temp2 < 0)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/*
@@ -109,8 +162,15 @@ public class Exercises {
 	 in1020(8, 99) → false
 	 */
 	public boolean in1020(int a, int b) {
-		return false;
+		if (a >= 10 && a <= 20) {
+			return true;
+		} else if (b >= 10 && b <= 20) {
+			return true;
+		} else {
+			return false;
+		}
 	}
+
 
 	/*
 	 11. We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 3 int values,
@@ -120,8 +180,12 @@ public class Exercises {
 	 hasTeen(20, 10, 13) → true
 	 */
 	public boolean hasTeen(int a, int b, int c) {
+		if (a >= 13 && a <= 19 || b >= 13 && b <= 19 || c >= 13 && c <= 19) {
+			return true;
+		}
 		return false;
 	}
+
 
 	/*
 	 12. We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 2 int values,
@@ -131,8 +195,17 @@ public class Exercises {
 	 loneTeen(13, 13) → false
 	 */
 	public boolean loneTeen(int a, int b) {
-		return false;
+		if (a >= 13 && a <= 19 && b >= 13 && b <= 19) {
+			return false;
+		} else if (a >= 13 && a <= 19) {
+			return true;
+		} else if (b >= 13 && b <= 19) {
+			return true;
+		} else {
+			return false;
+		}
 	}
+
 
 	/*
 	 13. Given three int values, a b c, return the largest.
@@ -141,6 +214,15 @@ public class Exercises {
 	 intMax(3, 2, 1) → 3
 	 */
 	public int intMax(int a, int b, int c) {
+		if (a >= b && a >= c) {
+			return a;
+		}
+		if (b >= a && b >= c) {
+			return b;
+		}
+		if (c >= a && c >= b) {
+			return c;
+		}
 		return 0;
 	}
 
@@ -152,8 +234,15 @@ public class Exercises {
 	 in3050(40, 50) → true
 	 */
 	public boolean in3050(int a, int b) {
+		if (a >= 30 && a <= 40 && b >= 30 && b <= 40) {
+			return true;
+		}
+		if (a >= 40 && a <= 50 && b >= 40 && b <= 50) {
+			return true;
+		}
 		return false;
 	}
+
 
 	/*
 	 15. Given 2 int values, return the larger value that is in the range 10..20 inclusive,
@@ -163,8 +252,8 @@ public class Exercises {
 	 max1020(11, 9) → 11
 	 */
 	public int max1020(int a, int b) {
-		return 0;
-	}
+			return 0;
+		}
 
 	/*
 	 16. When squirrels get together for a party, they like to have cigars. A squirrel party is successful
@@ -176,8 +265,15 @@ public class Exercises {
 	 cigarParty(70, true) → true
 	 */
 	public boolean cigarParty(int cigars, boolean isWeekend) {
+		if (cigars >= 40 && cigars <= 60 && !isWeekend) {
+			return true;
+		}
+		if (cigars >= 40 && isWeekend) {
+			return true;
+		}
 		return false;
 	}
+
 
 	/*
 	 17. You and your date are trying to get a table at a restaurant. The parameter "you" is the stylishness
@@ -191,6 +287,7 @@ public class Exercises {
 	 dateFashion(5, 5) → 1
 	 */
 	public int dateFashion(int you, int date) {
+
 		return 0;
 	}
 
@@ -206,7 +303,7 @@ public class Exercises {
 		return false;
 	}
 
-    /*
+	/*
      19. Dessert Island Diner believes a meal isn't a meal without dessert. All meals come with
      a free dessert.
 
@@ -226,9 +323,9 @@ public class Exercises {
      yourCakeAndEatItToo(10.00, true) → "special"
      yourCakeAndEatItToo(11.00, false) → "special"
      */
-    public String yourCakeAndEatItToo(double mealAmount, boolean isBirthday) {
-        return "";
-    }
+	public String yourCakeAndEatItToo(double mealAmount, boolean isBirthday) {
+		return "";
+	}
 
 	/*
 	 20. Given 2 ints, a and b, return their sum. However, sums in the range 10..19 inclusive, are forbidden,
@@ -341,8 +438,24 @@ public class Exercises {
 	 answerCell(true, false, false) → false
 	 */
 	public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
+		if (isAsleep == true) {
+			return false;
+		}
+		if (isMom == true && isMorning == true && !isAsleep == true) {
+			return true;
+		}
+		if (!isMom == true && isMorning == true && !isAsleep == true) {
+			return false;
+		}
+		if (isMom == true && !isMorning == true && !isAsleep == true) {
+			return true;
+		}
+		if (!isMom == true && !isMorning == true && !isAsleep == true) {
+			return true;
+		}
 		return false;
 	}
+
 
 	/*
 	 30. We are having a party with amounts of tea and candy. Return the int outcome of the party encoded as
@@ -354,8 +467,15 @@ public class Exercises {
 	 teaParty(20, 6) → 2
 	 */
 	public int teaParty(int tea, int candy) {
-		return 0;
+		if (tea < 5 || candy < 5) {
+			return 0;
+		} else if (tea >= 2 * candy || candy >= 2 * tea) {
+			return 2;
+		} else {
+			return 1;
+		}
 	}
+
 
 	/*
 	 31. Given three ints, a b c, return true if it is possible to add two of the ints to get the third.
@@ -364,8 +484,12 @@ public class Exercises {
 	 twoAsOne(3, 2, 2) → false
 	 */
 	public boolean twoAsOne(int a, int b, int c) {
+		if (a + b == c || b + c == a || c + a == b) {
+			return true;
+		}
 		return false;
 	}
+
 
 	/*
 	 32. Given three ints, a b c, return true if b is greater than a, and c is greater than b. However, with
@@ -375,8 +499,18 @@ public class Exercises {
 	 inOrder(1, 1, 2, true) → true
 	 */
 	public boolean inOrder(int a, int b, int c, boolean bOk) {
+		if (bOk == true) {
+			if (c > b) {
+				return true;
+			}
+		} else {
+			if (b > a && c > b) {
+				return true;
+			}
+		}
 		return false;
 	}
+
 
 	/*
 	 33. Given three ints, a b c, return true if they are in strict increasing order, such as 2 5 11,
@@ -387,8 +521,18 @@ public class Exercises {
 	 inOrderEqual(5, 5, 7, true) → true
 	 */
 	public boolean inOrderEqual(int a, int b, int c, boolean equalOk) {
+		if (equalOk == true) {
+			if (a <= b && b <= c) {
+				return true;
+			}
+		} else {
+			if (a < b && b < c) {
+				return true;
+			}
+		}
 		return false;
 	}
+
 
 	/*
 	 34. Given 3 int values, a b c, return their sum. However, if one of the values is the same as another
@@ -398,8 +542,18 @@ public class Exercises {
 	 loneSum(3, 3, 3) → 0
 	 */
 	public int loneSum(int a, int b, int c) {
-		return 0;
+		if (a == b && a == c) {
+			return 0;
+		} else if (a == b) {
+			return c;
+		} else if (a == c) {
+			return b;
+		} else if (b == c) {
+			return a;
+		}
+		return a + b + c;
 	}
+
 
 	/*
 	 35. Given 3 int values, a b c, return their sum. However, if one of the values is 13 then it does not
@@ -412,7 +566,12 @@ public class Exercises {
 	 luckySum(13, 13, 3) → 0
 	 */
 	public int luckySum(int a, int b, int c) {
-		return 0;
+		if (a == 13)
+			return 0;
+		if (b == 13)
+			return a;
+		if (c == 13)
+			return (a + b);
+		return (a + b + c);
 	}
-
 }
