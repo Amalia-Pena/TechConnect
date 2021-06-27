@@ -252,8 +252,14 @@ public class Exercises {
 	 max1020(11, 9) → 11
 	 */
 	public int max1020(int a, int b) {
-			return 0;
+		if ((a > b && a >= 10 && a < 20) || (a >= 10 && a <= 20 && (b < 10 || b > 20))) {
+			return a;
 		}
+		if ((b > a && b >= 10 && b < 20) || (b >= 10 && b <= 20 && (a < 10 || a > 20))) {
+			return b;
+		}
+		return 0;
+	}
 
 	/*
 	 16. When squirrels get together for a party, they like to have cigars. A squirrel party is successful
@@ -287,9 +293,15 @@ public class Exercises {
 	 dateFashion(5, 5) → 1
 	 */
 	public int dateFashion(int you, int date) {
-
-		return 0;
+		if ((you >= 8 && date > 2) || (date >= 8 &&  you > 2)) {
+			return 2;
+		}
+		if (you <= 2 || date <= 2) {
+			return 0;
+		}
+		return 1;
 	}
+
 
 	/*
 	 18. The squirrels in Palo Alto spend most of the day playing. In particular, they play if the temperature
@@ -300,6 +312,12 @@ public class Exercises {
 	 squirrelPlay(95, true) → true
 	 */
 	public boolean squirrelPlay(int temp, boolean isSummer) {
+		if (temp >= 60 && temp <= 90 && !isSummer) {
+			return true;
+		}
+		if (temp >= 60 && temp <= 100 && isSummer) {
+			return true;
+		}
 		return false;
 	}
 
@@ -324,6 +342,7 @@ public class Exercises {
      yourCakeAndEatItToo(11.00, false) → "special"
      */
 	public String yourCakeAndEatItToo(double mealAmount, boolean isBirthday) {
+
 		return "";
 	}
 
@@ -335,8 +354,15 @@ public class Exercises {
 	 sortaSum(10, 11) → 21
 	 */
 	public int sortaSum(int a, int b) {
-		return 0;
+		int sum = a + b;
+
+		if (sum >= 10 && sum <= 19)
+			return 20;
+		 else
+			return sum;
 	}
+
+
 
 	/*
 	 21. Given a day of the week encoded as 0=Sun, 1=Mon, 2=Tue, ...6=Sat, and a boolean indicating if we are
@@ -347,9 +373,9 @@ public class Exercises {
 	 alarmClock(5, false) → "7:00"
 	 alarmClock(0, false) → "10:00"
 	 */
-	public String alarmClock(int day, boolean vacation) {
-		return "";
-	}
+		public String alarmClock ( int day, boolean vacation){
+
+
 
 	/*
 	 22. Given a number n, return true if n is in the range 1..10, inclusive. Unless "outsideMode" is true,
@@ -358,7 +384,13 @@ public class Exercises {
 	 in1To10(11, false) → false
 	 in1To10(11, true) → true
 	 */
-	public boolean in1To10(int n, boolean outsideMode) {
+		public boolean in1To10(int n, boolean outsideMode) {
+		if (n >= 1 && n <= 10 && !outsideMode) {
+			return true;
+		}
+		if (n <= 1 && n >= 10 && outsideMode) {
+			return true;
+		}
 		return false;
 	}
 

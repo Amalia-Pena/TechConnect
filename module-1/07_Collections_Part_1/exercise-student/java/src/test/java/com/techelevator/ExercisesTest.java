@@ -149,20 +149,20 @@ public class ExercisesTest {
 	@Test
 	public void exercise08_fizzBuzzList() {
 		String failureMessage = compareArrayLists(new ArrayList<String>(Arrays.asList("1", "2", "Fizz")),
-				exercises.fizzBuzzList(new Integer[] { 1, 2, 3 }));
+				exercises.fizzBuzzList(1, 2, 3));
 		if (failureMessage != null) {
 			fail("Input: fizzBuzzList(new Integer[] {1, 2, 3})" + failureMessage);
 		}
 
 		failureMessage = compareArrayLists(new ArrayList<Object>(Arrays.asList("4", "Buzz", "Fizz")),
-				exercises.fizzBuzzList(new Integer[] { 4, 5, 6 }));
+				exercises.fizzBuzzList(4, 5, 6));
 		if (failureMessage != null) {
 			fail("Input: fizzBuzzList(new Integer[] {4, 5, 6})" + failureMessage);
 		}
 
 		failureMessage = compareArrayLists(
 				new ArrayList<Object>(Arrays.asList("7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz")),
-				exercises.fizzBuzzList(new Integer[] { 7, 8, 9, 10, 11, 12, 13, 14, 15 }));
+				exercises.fizzBuzzList(7, 8, 9, 10, 11, 12, 13, 14, 15));
 		if (failureMessage != null) {
 			fail("Input: fizzBuzzList(new Integer[] {7, 8, 9, 10, 11, 12, 13, 14, 15})" + failureMessage);
 		}
