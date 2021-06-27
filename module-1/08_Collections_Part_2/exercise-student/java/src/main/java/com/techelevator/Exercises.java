@@ -268,6 +268,15 @@ public class Exercises {
 	public Map<String, Integer> consolidateInventory(Map<String, Integer> mainWarehouse,
 													 Map<String, Integer> remoteWarehouse) {
 
+		Map<String, Integer> consolidateInventory = new HashMap<String, Integer>();
+		Set<String> keyMain = mainWarehouse.keySet();
+		Set<String> keyRemote = remoteWarehouse.keySet();
+
+		for (String main : keyMain);
+
+		Integer value = mainWarehouse.get(main);
+
+
 
 
 		return null;

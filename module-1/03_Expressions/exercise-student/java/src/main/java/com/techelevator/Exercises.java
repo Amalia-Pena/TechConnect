@@ -1,7 +1,5 @@
 package com.techelevator;
 
-import javax.swing.*;
-
 public class Exercises {
 
 	/*
@@ -18,7 +16,6 @@ public class Exercises {
 			return true;
 		}
 	}
-
 
 	/*
 	 2. We have two monkeys, a and b, and the parameters aSmile and bSmile indicate if each is smiling.
@@ -52,6 +49,7 @@ public class Exercises {
 			return a + b;
 		}
 	}
+
 
 	/*
 	 4. Given an int n, return the absolute difference between n and 21, except return double the absolute
@@ -105,6 +103,7 @@ public class Exercises {
 		}
 	}
 
+
 	/*
 	 7. Given 2 int values, return true if one is negative and one is positive. Except if the parameter
 	 "negative" is true, then return true only if both are negative.
@@ -125,6 +124,7 @@ public class Exercises {
 		return false;
 	}
 
+
 	/*
 	 8. Return true if the given non-negative number is a multiple of 3 or a multiple of 5.
 	 (Hint: Think "mod".)
@@ -139,7 +139,6 @@ public class Exercises {
 			return false;
 		}
 	}
-
 
 	/*
 	 9. Given two temperatures, return true if one is less than 0 and the other is greater than 100.
@@ -186,7 +185,6 @@ public class Exercises {
 		return false;
 	}
 
-
 	/*
 	 12. We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 2 int values,
 	 return true if one or the other is teen, but not both.
@@ -206,7 +204,6 @@ public class Exercises {
 		}
 	}
 
-
 	/*
 	 13. Given three int values, a b c, return the largest.
 	 intMax(1, 2, 3) → 3
@@ -225,6 +222,7 @@ public class Exercises {
 		}
 		return 0;
 	}
+
 
 	/*
 	 14. Given 2 int values, return true if they are both in the range 30..40 inclusive, or they are both
@@ -261,6 +259,7 @@ public class Exercises {
 		return 0;
 	}
 
+
 	/*
 	 16. When squirrels get together for a party, they like to have cigars. A squirrel party is successful
 	 when the number of cigars is between 40 and 60, inclusive. Unless it is the weekend, in which case
@@ -280,7 +279,6 @@ public class Exercises {
 		return false;
 	}
 
-
 	/*
 	 17. You and your date are trying to get a table at a restaurant. The parameter "you" is the stylishness
 	 of your clothes, in the range 0..10, and "date" is the stylishness of your date's clothes. The result
@@ -293,7 +291,7 @@ public class Exercises {
 	 dateFashion(5, 5) → 1
 	 */
 	public int dateFashion(int you, int date) {
-		if ((you >= 8 && date > 2) || (date >= 8 &&  you > 2)) {
+		if ((you >= 8 && date > 2) || (date >= 8 && you > 2)) {
 			return 2;
 		}
 		if (you <= 2 || date <= 2) {
@@ -321,6 +319,7 @@ public class Exercises {
 		return false;
 	}
 
+
 	/*
      19. Dessert Island Diner believes a meal isn't a meal without dessert. All meals come with
      a free dessert.
@@ -342,7 +341,6 @@ public class Exercises {
      yourCakeAndEatItToo(11.00, false) → "special"
      */
 	public String yourCakeAndEatItToo(double mealAmount, boolean isBirthday) {
-
 		return "";
 	}
 
@@ -358,10 +356,9 @@ public class Exercises {
 
 		if (sum >= 10 && sum <= 19)
 			return 20;
-		 else
+		else
 			return sum;
 	}
-
 
 
 	/*
@@ -373,8 +370,9 @@ public class Exercises {
 	 alarmClock(5, false) → "7:00"
 	 alarmClock(0, false) → "10:00"
 	 */
-		public String alarmClock ( int day, boolean vacation){
-
+	public String alarmClock(int day, boolean vacation) {
+		return "";
+	}
 
 
 	/*
@@ -384,15 +382,16 @@ public class Exercises {
 	 in1To10(11, false) → false
 	 in1To10(11, true) → true
 	 */
-		public boolean in1To10(int n, boolean outsideMode) {
+	public boolean in1To10(int n, boolean outsideMode) {
 		if (n >= 1 && n <= 10 && !outsideMode) {
 			return true;
 		}
-		if (n <= 1 && n >= 10 && outsideMode) {
+		if ((n <= 1 || n >= 10) && outsideMode) {
 			return true;
 		}
 		return false;
 	}
+
 
 	/*
 	 23. We'll say a number is special if it is a multiple of 11 or if it is one more than a multiple of 11.
@@ -403,8 +402,9 @@ public class Exercises {
 	 specialEleven(24) → false
 	 */
 	public boolean specialEleven(int n) {
-		return false;
+		return n % 11 == 0 || n % 11 == 1;
 	}
+
 
 	/*
 	 24. Return true if the given non-negative number is 1 or 2 more than a multiple of 20.
@@ -414,8 +414,9 @@ public class Exercises {
 	 more20(22) → true
 	 */
 	public boolean more20(int n) {
-		return false;
+		return n % 20 == 1 || n % 20 == 2;
 	}
+
 
 	/*
 	 25. Return true if the given non-negative number is a multiple of 3 or 5, but not both.
@@ -425,7 +426,7 @@ public class Exercises {
 	 old35(15) → false
 	 */
 	public boolean old35(int n) {
-		return false;
+		return n % 3 == 0 ^ n % 5 == 0;
 	}
 
 	/*
@@ -437,7 +438,7 @@ public class Exercises {
 	 less20(20) → false
 	 */
 	public boolean less20(int n) {
-		return false;
+		return (n + 1) % 20 == 0 || (n + 2) % 20 == 0;
 	}
 
 	/*
@@ -448,7 +449,11 @@ public class Exercises {
 	 nearTen(19) → true
 	 */
 	public boolean nearTen(int num) {
-		return false;
+		if (num % 10 < 3 || num % 10 >= 8) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/*
@@ -459,7 +464,12 @@ public class Exercises {
 	 teenSum(13, 2) → 19
 	 */
 	public int teenSum(int a, int b) {
-		return 0;
+		int sum = a + b;
+		if ((a >= 13 && a <= 19) || (b >= 13 && b <= 19)) {
+			return 19;
+		} else {
+			return sum;
+		}
 	}
 
 	/*
@@ -507,7 +517,6 @@ public class Exercises {
 			return 1;
 		}
 	}
-
 
 	/*
 	 31. Given three ints, a b c, return true if it is possible to add two of the ints to get the third.
@@ -598,12 +607,20 @@ public class Exercises {
 	 luckySum(13, 13, 3) → 0
 	 */
 	public int luckySum(int a, int b, int c) {
-		if (a == 13)
+		if(a == 13)
 			return 0;
-		if (b == 13)
+
+		else if(b == 13)
 			return a;
-		if (c == 13)
-			return (a + b);
-		return (a + b + c);
-	}
-}
+
+		else if(c == 13)
+			return a + b;
+
+		else
+			return a + b + c;
+		}
+
+
+
+
+
