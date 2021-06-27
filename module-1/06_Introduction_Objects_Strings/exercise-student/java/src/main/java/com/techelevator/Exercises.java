@@ -181,7 +181,7 @@ public class Exercises {
 	 withoutEnd2("ab") → ""
 	 */
 	public String withoutEnd2(String str) {
-		if (str.length() <=2) {
+		if (str.length() <= 2) {
 			return "";
 		}
 		return str.substring(1, str.length() - 1);
