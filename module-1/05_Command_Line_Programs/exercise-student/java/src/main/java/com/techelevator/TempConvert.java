@@ -23,11 +23,11 @@ public class TempConvert {
 		String unitOfTemp = input.nextLine();
 		double resultTemp = 0.0;
 
-		if(unitOfTemp.equalsIgnoreCase("C") ){
+		if (unitOfTemp.equalsIgnoreCase("C")) {
 			// convert from celsuis to Fahrenheit
 			resultTemp = temperature * 1.8 + 32;
 
-		} else if(unitOfTemp.equalsIgnoreCase("F")) {
+		} else if (unitOfTemp.equalsIgnoreCase("F")) {
 			// convert from F to C
 			resultTemp = (temperature - 32) / 1.8;
 
