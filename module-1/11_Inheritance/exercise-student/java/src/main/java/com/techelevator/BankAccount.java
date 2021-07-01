@@ -1,22 +1,21 @@
-package com.techelevator.BankAccount;
+package com.techelevator;
 
 public class BankAccount {
 
     private String accountNumber;
-    private int balance = new int ("0");
+    private int balance;
     private String accountHolderName;
 
-    public BankAccount() {
-        balance = new int ("0.00"):
-        accountNumber = "hk8ytg";
-        accountHolderName = "Amalia";
-
+    public BankAccount(String accountHolder, String accountNumber) {
+        this.accountHolderName = accountHolder;
+        this.accountNumber = accountNumber;
+        this.balance = 0;
     }
 
-    public BankAccount (String accountNumber, int balance, String accountHolderName) {
+    public BankAccount (String accountHolder, String accountNumber, int balance ) {
         this.accountNumber = accountNumber;
         this.balance = balance;
-        this.accountHolderName = accountHolderName;
+        this.accountHolderName = accountHolder;
     }
 
 
@@ -33,14 +32,13 @@ public class BankAccount {
     }
 
     public int deposit (int amountToDeposit) {
-        balance = balance.add(amountToDeposit);
-        this.setBalance(balance);
+        balance = balance + amountToDeposit;
         return balance;
     }
 
     public int withdraw(int amountToWithdraw) {
-        balance = balance.subtract(amountToWithdraw);
-        this.setBalance(balance);
+        balance = balance - amountToWithdraw;
         return balance;
    }
+
 }
