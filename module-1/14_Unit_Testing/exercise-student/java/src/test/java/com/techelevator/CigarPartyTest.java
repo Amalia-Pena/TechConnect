@@ -18,6 +18,9 @@ public class CigarPartyTest {
     }
     @Test
     public void tellIfPartyIsSuccessfulOrNot() {
+        Assert.assertEquals("Incorrect, answer should be false.", cp.haveParty(30, false), false);
+        Assert.assertEquals("Incorrect, answer should be true", cp.haveParty(50, false), true);
+        Assert.assertEquals("Incorrect, answer should be true.", cp.haveParty(70, true), true);
 
     }
 }

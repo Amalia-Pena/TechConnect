@@ -19,9 +19,15 @@ public class AnimalGroupNameTest {
 
         @Test
         public void givenNameOfAnimalReturnNameOfGroupOfAnimal() {  // method name indicating what I am testing
-
-
+            Assert.assertEquals("Answer should be Tower.", agn.getHerd("giraffe"), "Tower");
+            Assert.assertEquals("Answer should be Crash.", agn.getHerd("rhino"), "Crash");
+            Assert.assertEquals("Answer should be Herd.", agn.getHerd("elephant"), "Herd");
+            Assert.assertEquals("Answer should be Murder.", agn.getHerd("crow"), "Murder");
+            Assert.assertEquals("Answer should be Herd.", agn.getHerd("lion"), "Herd");
+            Assert.assertEquals("Answer should be Kit.", agn.getHerd("pigeon"), "Kit");
+            Assert.assertEquals("Answer should be Pat.", agn.getHerd("flamingo"), "Pat");
+            Assert.assertEquals("Answer should be Herd.", agn.getHerd("deer"), "Herd");
+            Assert.assertEquals("Answer should be Pack.", agn.getHerd("dog"), "Pack");
+            Assert.assertEquals("Answer should be Float.", agn.getHerd("crocodile"), "Float");
         }
 }
-
-
