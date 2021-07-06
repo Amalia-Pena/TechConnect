@@ -19,5 +19,6 @@ public class FrontTimesTest {
     @Test
     public void stringOfFirst3Chars() {
 
+    
     }
 }
