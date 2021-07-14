@@ -3,4 +3,4 @@
 
 select state_name, population, area, (population / area) AS population_density
 from state
-where population_density > 100
+where (population / area) > 100
