@@ -5,5 +5,6 @@
 
 SELECT census_region, COUNT(state_name) AS num_states
 FROM state
-WHERE census_region != NULL
-ORDER BY num_states ASC
+WHERE census_region IS NOT NULL
+GROUP BY census_region
+ORDER BY num_states DESC
