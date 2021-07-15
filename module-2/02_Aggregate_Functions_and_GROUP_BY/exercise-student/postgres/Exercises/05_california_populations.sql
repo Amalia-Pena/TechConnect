@@ -3,5 +3,5 @@
 -- (1 row)
 SELECT SUM(population) AS california_population
 FROM city
-WHERE city_name = 'California'
+WHERE state_abbreviation = 'CA'
 
