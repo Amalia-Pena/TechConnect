@@ -5,5 +5,4 @@
 
 SELECT state_name || ' ('|| state_nickname ||') ' || AS state_and_nickname
 FROM state
-WHERE -- null statement
-ORDER BY state_nickname ASC
+WHERE state_nickname IS NOT NULL
