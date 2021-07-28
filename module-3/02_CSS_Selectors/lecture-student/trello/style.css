@@ -1,0 +1,96 @@
+html {
+    height: 100vh;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: darkgray;
+    white-space: nowrap;
+}
+header {
+    position: fixed;
+    display: block;
+    width: 100vw;
+    height: 80px;
+    top: 0;
+    background-color: inherit;
+}
+main {
+    margin-top: 80px;
+}
+
+header > h1, header > p {
+    display: inline-block;
+    padding: 10px;
+    border-right: antiquewhite solid 1px;
+    color: rgba(255, 255, 255, 0.8);
+    vertical-align: middle;
+}
+.trello-list .card {
+    white-space: normal;
+}
+
+.trello-list {
+    width: 300px;
+    background-color: gainsboro;
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 8px;
+}
+
+.trello-list > h2 {
+    display: inline-block;
+    margin: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.trello-list > ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.trello-list > ol > li {
+    background-color: aliceblue;
+    font-size: 0.8em;
+    margin-bottom: 10px;
+    padding: 7px;
+    border-radius: 3px;
+}
+
+span.label {
+    height: 8px;
+    width: 30px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 4px;
+}
+
+span.label.general {
+    background-color: orange;
+}
+span.label.pathway {
+    background-color: red;
+}
+span.label.individual {
+    background-color: green;
+}
+span.label.pair {
+    background-color: cornflowerblue;
+}
+.trello-list > a {
+    text-decoration: none;
+    color: slategray;
+    padding: 0 0 5px 5px;
+    display: block;
+}
+
+
+
+
+
+
+
