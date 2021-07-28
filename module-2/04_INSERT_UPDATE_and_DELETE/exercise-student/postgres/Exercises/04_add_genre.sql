@@ -4,6 +4,7 @@
 insert into genre (genre_name)
 values ('Sports');
 
-insert into movie
+insert into movie_genre (movie_id, genre_id)
+values ((select movie_id from movie where title = 'Coach Carter'), (select genre_id from genre where genre_name = 'Sports'));
 
 

@@ -4,4 +4,5 @@
 -- You'll need to also add a space before the new sentence.
 
 update movie
-set overview =
+set overview = overview || ' This is a long movie.'
+where length_minutes > 210;

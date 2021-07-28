@@ -1,5 +1,6 @@
 -- 1. Add a new person to the person table with the name "Lisa Byway"
 -- with the birthday of 4/15/1984 (1 row)
 
-insert into person (person_name, birthday, deathday, biography, profile_path, home_page)
-values ('Lisa Byway', '4/15/1984', null, 'nothing', 'nothing', 'nothing')
+insert into person (person_name, birthday, deathday)
+values ('Lisa Byway', '4/15/1984', null)
+
