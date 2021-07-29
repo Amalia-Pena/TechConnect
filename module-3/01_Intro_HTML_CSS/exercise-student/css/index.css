@@ -1,20 +1,25 @@
 body {
     font-family: "Arial Black";
-
+    line-height: 2 ;
 }
 header {
     background-color: lightgoldenrodyellow;
     text-transform: uppercase;
     text-align: center;
+    font-size: 38px;
 }
 main {
     background-color: lightcyan;
 }
-
 img {
     height: 400px;
 }
-
 p {
     font-family: "Arial Black";
+}
+h2 {
+    text-decoration: underline;
+}
+footer {
+    background-color: lightgoldenrodyellow;
 }
