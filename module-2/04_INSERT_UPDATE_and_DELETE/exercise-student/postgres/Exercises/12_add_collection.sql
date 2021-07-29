@@ -12,4 +12,4 @@ where movie_id = (select movie_id
                     join person on movie_actor.actor_id = person.person_id
                     where person_name = 'Bill Murray');
 
--- I think my error is relates to my join 
+-- I think my error is relates to my join

@@ -1,0 +1,51 @@
+<!DOCTYPE html>   <!-- This makes this html5 -->
+<html lang="en">  <!-- lang is an Attribute -->
+<head>
+  <meta charset="UTF-8"> <!-- gives us variable page structure meta data, allow us to store data -->
+  <title>Title</title> <!-- This is what is on the tab name for the webpage -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- meta is a self closing tab, what is this for??? -->
+  <link rel="stylesheet" href="css/index.css"> <!-- links the css file -->
+</head>
+<body>
+<header>
+  <h1>Reservations</h1>
+  <p>Welcome to the Internet's best restaurant</p>
+</header>
+<nav>
+  <a href="index.html">Home</a>
+</nav>
+<main>
+  <h2>Reservations</h2>
+  <form method="POST" action="http://somewhere.com/api/reservation">
+    <p>
+    <label for="reservationName">Name: </label>
+    <input id="reservationName" type="text">
+    </p>
+    <p>
+    <label for="numberOfGuests"> Number of guests:</label>
+    <input id="numberOfGuests" type="number">
+    </p>
+    <p>
+      <label for="reservationDate">Date:</label>
+      <input id="reservationDate" type="date">
+    </p>
+    <p>
+      <label for="reservationTime"> Time: </lable>
+        <input id="reservationTime" type="time">
+    </p>
+    <p>
+      <label for="specialOccasion"> Special Occasion:</label>
+      <input id="specialOccasion" type="checkbox">
+    </p>
+    <p>
+      <input type="submit">
+      <input type="reset">
+    </p>
+  </form>
+
+</main>
+<footer>
+  copyright
+</footer>
+</body>
+</html>
