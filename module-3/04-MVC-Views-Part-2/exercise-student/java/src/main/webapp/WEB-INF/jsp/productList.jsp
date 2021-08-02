@@ -13,7 +13,7 @@
 
 	<div class="main-content">
 		<!-- Container for Sorting Choices
-         
+
          Each link should take the user to this current page and use any combination of the following
          querystring parameters to sort the page:
             - sortOrder (string) - PriceLowToHigh,PriceHighToLow,RatingHighToLow
@@ -21,7 +21,7 @@
 		<div id="sorting-options">
 			<h3>Sort By</h3>
 			<ul>
-				<li><a href="#">Price - Low to High</a></li>
+				<li><a href="/products?sortOrder=PriceLowToHigh">Price - Low to High</a></li>
 				<li><a href="#">Price - High to Low</a></li>
 				<li><a href="#">Rating - High to Low</a></li>
 			</ul>
@@ -31,15 +31,15 @@
 		<!-- The list of products is available using the `products` variable -->
 		<div id="grid">
 
-			<!-- 
-			The following HTML shows different examples of what HTML could be rendered based on different rules. 
-			For purposes of demonstration we've written it out so you can see it when you load the page up. 
+			<!--
+			The following HTML shows different examples of what HTML could be rendered based on different rules.
+			For purposes of demonstration we've written it out so you can see it when you load the page up.
 			-->
 
 			<!-- Standard Product -->
 			<div class="tile ">
 				<!-- Link to the Detail page using the product id (e.g. products/detail?id=1) -->
-				<a class="product-image" href="#"> 
+				<a class="product-image" href="#">
 					<img src="<c:url value="/images/product-images/grey-sofa.jpg" />" />
 				</a>
 				<div class="details">
@@ -47,10 +47,10 @@
 
 					<!-- .filled will make the star solid -->
 					<div class="rating">
-						<span class="filled">&#9734;</span> 
 						<span class="filled">&#9734;</span>
-						<span>&#9734;</span> 
-						<span>&#9734;</span> 
+						<span class="filled">&#9734;</span>
+						<span>&#9734;</span>
+						<span>&#9734;</span>
 						<span>&#9734;</span>
 					</div>
 
@@ -63,7 +63,7 @@
 				<span class="banner top-seller">Top Seller!</span>
 
 				<!-- Link to the Detail page using the product id (e.g. products/detail?id=1) -->
-				<a class="product-image" href="#"> 
+				<a class="product-image" href="#">
 					<img src="<c:url value="/images/product-images/grey-sofa.jpg" />" />
 				</a>
 				<div class="details">
@@ -71,9 +71,9 @@
 
 					<!-- .filled will make the star solid -->
 					<div class="rating">
-						<span class="filled">&#9734;</span> 
 						<span class="filled">&#9734;</span>
-						<span class="filled">&#9734;</span> 
+						<span class="filled">&#9734;</span>
+						<span class="filled">&#9734;</span>
 						<span class="filled">&#9734;</span>
 						<span>&#9734;</span>
 					</div>
@@ -85,26 +85,23 @@
 			</div>
 
 			<!-- Add the .sold-out class if the remaining quantity is 0 -->
-			<div class="tile sold-out">
+			<div class="tile ${value}">
 				<!-- Include this if the remaining quantity is 0 -->
 				<span class="banner">Sold Out</span>
 
 				<!-- Link to the Detail page using the product id (e.g. products/detail?id=1) -->
-				<a class="product-image" href="#"> 
+				<a class="product-image" href="#">
 					<img src="<c:url value="/images/product-images/grey-sofa.jpg" />" />
 				</a>
 				<div class="details">
 					<p class="name">Grey Sofa</p>
 
-					<!-- .filled will make the star solid -->
 					<div class="rating">
-						<span class="filled">&#9734;</span> 
-						<span>&#9734;</span> 
-						<span>&#9734;</span>
-						<span>&#9734;</span> 
-						<span>&#9734;</span>
+					<c:forEach begin="1" end="5" var="starCount">
+						<c:set var="filled" value="${starCount <= product.averageRating} ? 'filled' : ''"/>
+						<span class="${filled}">&#9734;</span>
+					</c:forEach>
 					</div>
-
 					<p class="price">$939.00</p>
 				</div>
 			</div>
