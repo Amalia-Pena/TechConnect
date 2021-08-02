@@ -25,8 +25,33 @@
 	</ul>
 </nav>
 
+
+
+<ul
+		id="fizzbuzz">
+
+	<c:forEach begin="1" end="${param.number}" var="number">
+
+		<c:choose>
+			<c:when test="${number % 3 == 0 && number % 5 == 0}">
+				<c:set var="rowClassAttribute" value="FizzBuzz!"/>
+				<li class="fizzbuzz">FizzBuzz!</li>
+
+			</c:when>
+			<c:when test="${number % 3 == 0}">
+				<c:set var="rowClassAttribute" value="Fizz!"/>
+				<li class="fizz">Fizz!</li>
+			</c:when>
+
+		</c:choose>
+	</c:forEach>
+</ul>
 <%--
 	REPLACE THIS COMMENT WITH YOUR UNORDERED LIST...
+	I know it is not fully correct.
+	Still working on it. Had a hard time.
+	Not fully sure if I apprached this the right way.
+	Missing when test (5)
  --%>
 
 <c:import url="common/footer.jsp"></c:import>

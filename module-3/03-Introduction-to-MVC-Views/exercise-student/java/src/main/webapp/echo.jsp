@@ -40,6 +40,16 @@
 
 	<li style="font-size: 20px;">Hello!</li>
 </ul>
+
+
+
+
+<ul>
+	<c:forEach begin="1" end="${param.count}" var="counter">
+		<li style="font-size: ${param.count - counter +1}px">
+			<c:out value="${param.word}"/></li>
+	</c:forEach>
+</ul>
 <%--
 	REPLACE THIS COMMENT WITH YOUR UNORDERED LIST...
  --%>
