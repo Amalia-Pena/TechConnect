@@ -7,6 +7,6 @@
 <h2>New Checking Account Application</h2>
 <h3>Thank You</h3>
 
-<p>Thank you for your account application.  We'll be in touch.</p>
+<p>Thank you for your account application ${customerApplication.firstName}.  We'll be in touch.</p>
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />

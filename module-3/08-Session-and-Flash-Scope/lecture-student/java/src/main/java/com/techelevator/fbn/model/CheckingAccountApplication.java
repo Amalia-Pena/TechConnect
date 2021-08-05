@@ -15,6 +15,17 @@ public class CheckingAccountApplication {
 	private String addressState;
 	private String addressZip;
 
+	@Override
+	public String toString() {
+		return "CheckingAccountApplication{" +
+				"firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", dateOfBirth=" + dateOfBirth +
+				", stateOfBirth='" + stateOfBirth + '\'' +
+				", emailAddress='" + emailAddress + '\'' +
+				", phoneNumber='" + phoneNumber;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}

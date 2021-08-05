@@ -10,20 +10,20 @@
 <form method="POST" action="personalInformationInput">
 
 	<div class="formInputGroup">
-		<label for="firstName">First Name:</label> 
-		<input type="text" name="firstName" id="firstName" />
+		<label for="first_name">First Name:</label>
+		<input type="text" name="first_name" id="first_name" />
 	</div>
-	
+
 	<div class="formInputGroup">
-		<label for="lastName">Last Name:</label> 
-		<input type="text" name="lastName" id="lastName" />
+		<label for="last_name">Last Name:</label>
+		<input type="text" name="last_name" id="last_name" />
 	</div>
-	
+
 	<div class="formInputGroup">
-		<label for="dateOfBirth">Date of Birth:</label> 
+		<label for="dateOfBirth">Date of Birth:</label>
 		<input type="text" name="dateOfBirth" id="dateOfBirth" />
 	</div>
-	
+
 	<div class="formInputGroup">
 		<label for="stateOfBirth">State of Birth:</label> <select
 			name="stateOfBirth" id="stateOfBirth">
@@ -81,14 +81,14 @@
 		</select>
 	</div>
 	<div class="formInputGroup">
-		<label for="emailAddress">Email Address:</label> 
+		<label for="emailAddress">Email Address:</label>
 		<input type="text" name="emailAddress" id="emailAddress" />
 	</div>
 	<div class="formInputGroup">
-		<label for="phoneNumber">Phone Number:</label> 
+		<label for="phoneNumber">Phone Number:</label>
 		<input type="text" name="phoneNumber" id="phoneNumber" />
 	</div>
 	<input class="formSubmitButton" type="submit" value="Next >>>" />
 </form>
-		
+
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />

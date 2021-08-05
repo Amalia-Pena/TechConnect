@@ -3,6 +3,7 @@ package com.techelevator.fbn.controller;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -26,9 +27,7 @@ public class StocksController {
 	@RequestMapping(path = { "/stocks" }, method = RequestMethod.GET)
 	public String showStocksPage(ModelMap map) {
 		List<Stock> stocks = getStocks();
-
 		map.put("stocks", stocks);
-
 		return "stocks/stocksLandingPage";
 	}
 
@@ -36,23 +35,42 @@ public class StocksController {
 	 * - Create a GET mapping to /stockPurchase
 	 * - Send the user to stocksPurchasePage.jsp
 	 */
+	@RequestMapping(path = { "/stockPurchase" }, method = RequestMethod.GET)
+	public String showStockPurchase() {
+		return "stocks/stocksPurchasePage";
+	}
 
 	/*
 	 * 2.
 	 * - Create a POST mapping to /stockPurchase
 	 * - Bring in the ticker and shares from the form
 	 * - Bring in a RedirectAttributes object.
-	 * - Add three redirect attributes: 
+	 * - Add three redirect attributes:
 	 * - 1) Time Stamp
 	 * - 2) Shares Bought
 	 * - 3) Ticker Symbol
 	 * - Redirect to /stocksConfirmation
 	 */
+	@RequestMapping(path="/stockPurchase", method = RequestMethod.POST)
+	public String purchaseStock(@RequestParam String ticker,
+								@RequestParam int shares,
+								RedirectAttributes redirectAttributes) {
+		redirectAttributes.addFlashAttribute("timeStamp", LocalTime.now());
+		redirectAttributes.addFlashAttribute("shares", shares);
+		redirectAttributes.addFlashAttribute("ticker", ticker);
 
-	    
+		return "redirect:/stocksConfirmation";
+
+	}
+
 	/* 3.
 	 * Send the user to stocksConfirmationPage.jsp
 	 */
+	@RequestMapping(path = { "/stocksConfirmation" }, method = RequestMethod.GET)
+	public String showStockConfirmatioin() {
+		return "stocks/stocksConfirmationPage";
+	}
+
 
 	private List<Stock> getStocks() {
 		List<Stock> stocks = new ArrayList<Stock>();
@@ -68,21 +86,21 @@ public class StocksController {
 
 				stock.setTicker(nameParts[1]);
 				stock.setName(nameParts[3]);
-								
+
 				String[] priceAndChange = nameParts[4].split("\\s+");
-				
+
 				String[] priceString = priceAndChange[0].split("\\.");
 				int dollars = Integer.parseInt(priceString[0]);
 				int cents = Integer.parseInt(priceString[1].substring(0, 2));
 				DollarAmount price = new DollarAmount(dollars * 100 + cents);
-				stock.setPrice(price);				
-				
+				stock.setPrice(price);
+
 				float change = Float.parseFloat(priceAndChange[1]);
 				stock.setChange(change);
 
 				stocks.add(stock);
 			}
-			
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
