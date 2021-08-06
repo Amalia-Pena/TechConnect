@@ -22,14 +22,26 @@
 			<h3>Sort By</h3>
 			<ul>
 				<li><a href="/products?sortOrder=PriceLowToHigh">Price - Low to High</a></li>
-				<li><a href="/products/productList/?sortOrder = PriceHighToLow">Price - High to Low</a></li>
-				<li><a href="/products/productList/?sortOrder = RatingHighToLow">Rating - High to Low</a></li>
+				<li><a href="/products?sortOrder = PriceHighToLow">Price - High to Low</a></li>
+				<li><a href="/products?sortOrder = RatingHighToLow">Rating - High to Low</a></li>
 			</ul>
 		</div>
 
 		<!-- Container for all of the Products -->
 		<!-- The list of products is available using the `products` variable -->
 		<div id="grid">
+			<c:forEach var="product" items="${products}">
+				<div class="tile ${product.remainingStock == 0 ? 'sold-out' : ''}">
+					<c:choose>
+						<c:when test="${product.remainingStock == 0}">
+							<span class="banner">Sold Out</span>
+						</c:when>
+					</c:choose>
+					<a class="product-image" href="/products/detail?id=${product.id}">
+						<img src="<c:url value="/images/product-images/${product.imageName}" />" />
+					</a>
+				</div>
+			</c:forEach>
 
 			<!--
 			The following HTML shows different examples of what HTML could be rendered based on different rules.
@@ -39,8 +51,8 @@
 			<!-- Standard Product -->
 			<div class="tile ">
 				<!-- Link to the Detail page using the product id (e.g. products/detail?id=1) -->
-				<a class="product-image" href="#">
-					<img src="<c:url value="/images/product-images/grey-sofa.jpg" />" />
+				<a class="product-image" href="/products/detail?id=${product.id}">
+					<img src="<c:url value="/images/product-images/${product.imageName}" />" />
 				</a>
 				<div class="details">
 					<p class="name">Grey Sofa</p>
