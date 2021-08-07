@@ -27,25 +27,29 @@
 
 
 
-<ul
-		id="fizzbuzz">
+<ul class="${numClassAttribute}">
+	<c:choose>
+		<c:when test="${ number % 15 == 0 }">
 
-	<c:forEach begin="1" end="${param.number}" var="number">
+			<li class="fizzbuzz"><c:out value= "FizzBuzz!" /></li>
+		</c:when>
 
-		<c:choose>
-			<c:when test="${number % 3 == 0 && number % 5 == 0}">
-				<c:set var="rowClassAttribute" value="FizzBuzz!"/>
-				<li class="fizzbuzz">FizzBuzz!</li>
+		<c:when test="${ number % 3 == 0 }">
+			<li class="fizz"><c:out value= "Fizz!" />
+		</c:when>
 
-			</c:when>
-			<c:when test="${number % 3 == 0}">
-				<c:set var="rowClassAttribute" value="Fizz!"/>
-				<li class="fizz">Fizz!</li>
-			</c:when>
+		<c:when test="${ number % 5 == 0 }">
+			<li class="buzz"><c:out value= "Buzz!" />
+		</c:when>
 
-		</c:choose>
-	</c:forEach>
+		<c:otherwise>
+			<li><c:out value= "${number}"/> </li>
+		</c:otherwise>
+
+	</c:choose>
+
 </ul>
+
 <%--
 	REPLACE THIS COMMENT WITH YOUR UNORDERED LIST...
 	I know it is not fully correct.

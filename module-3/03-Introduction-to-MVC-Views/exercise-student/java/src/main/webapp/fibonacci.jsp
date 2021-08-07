@@ -40,21 +40,15 @@
 
 
 
-<ul
-		id="fibonacci">
+<ul id="fibonacci">
+	<c:set var="first" value="1"/>
+	<li>1</li>
+	<c:forEach var="second" begin="1" end="${param.max}">
 
-	<c:set var="A" value="0"/>
-	<c:set var="B" value="1"/>
-	<c:set var="numberAdded" value="0"/>
-	<c:forEach begin="0" end="${param.max}">
-		<c:choose>
-			<c:when test="${numberAdded <= param.max}">
-				<li>${numberAdded}</li>
-				<c:set var="A" value="${B}"/>
-				<c:set var="B" value="${numberAdded}"/>
-				<c:set var="numberAdded" value="${A + B}"/>
-			</c:when>
-		</c:choose>
+		<c:set var="placeholder" value="${first}"/>
+		<li>${placeholder+second}</li>
+		<c:set var="first" value="${second}"></c:set>
+		<c:set var="second" value="${placeholder+second}"/>
 	</c:forEach>
 </ul>
 
