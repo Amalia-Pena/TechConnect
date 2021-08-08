@@ -24,4 +24,8 @@ public class JDBCCustomerDao implements CustomerDao {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
+    @Override
+    public List<Customer> searchAndSortCustomers(String search, String sort) {
+        return null;
+    }
 }

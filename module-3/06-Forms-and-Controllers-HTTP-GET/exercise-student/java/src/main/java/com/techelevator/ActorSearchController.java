@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class ActorSearchController {
 
@@ -18,13 +20,18 @@ public class ActorSearchController {
 	private ActorDao actorDao;
 
 	/* What request mapping do we want here */
-	public String showSearchActorForm() {
-		return null;
+	@RequestMapping(path = "/actorList", method = RequestMethod.GET)
+	public String showSearchActorForm(HttpServletRequest request) {
+		System.out.println(request.getParameter("name"));
+		request.setAttribute("actors", actorDao.getMatchingActors(request.getParameter("name")));
+		return "actorList";
 	}
 
 	/* What about here? */
-	public String searchActors(/* What arguments go here to get parameters from the page? */) {
+	@RequestMapping(path = "/search", method = RequestMethod.GET)
+	public String searchActors(HttpServletRequest request, @RequestParam String search, ModelMap model) {
 		/* Call the model and pass values to the jsp */
-		return null;
+		model.put("actor", actorDao.getMatchingActors(search));
+		return "actorList";
 	}
 }

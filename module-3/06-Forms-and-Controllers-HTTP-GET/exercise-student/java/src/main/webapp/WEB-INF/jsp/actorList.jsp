@@ -4,6 +4,14 @@
 
 <%@include file="common/header.jspf"%>
 <!-- Form goes here -->
+
+<c:import url="/actorList" var="formAction"/>
+<form method="GET" class="form-inline" action="${formAction}">
+    <input class="form-control" name="search" placeholder="search">
+    <input class="btn" name="submit" value="submit" type="submit">
+</form>
+
+
 <table class="table">
 <tr>
 <th>Name</th>
@@ -11,6 +19,10 @@
 <c:forEach items="${actors}" var="actor">
 <tr>
     <!-- What do we print here for each actor? -->
+    <td>
+        <c:out value="$actor.firstName}" />
+        <c:out value="$actor.lastName}" />
+    </td>
 </tr>
 </c:forEach>
 </table>
